@@ -4,7 +4,6 @@ class SingleDownloadScreen extends StatefulWidget {
   const SingleDownloadScreen({
     Key? key,
   }) : super(key: key);
-
   @override
   State<SingleDownloadScreen> createState() => _SingleDownloadScreenState();
 }
