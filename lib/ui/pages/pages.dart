@@ -1,0 +1,117 @@
+import 'dart:async';
+import 'dart:io';
+
+import 'package:camera/camera.dart';
+import 'package:dropdown_search/dropdown_search.dart';
+import 'package:email_validator/email_validator.dart';
+import 'package:flutter/foundation.dart';
+
+import 'package:flutter/material.dart';
+import 'package:flutter_animate/flutter_animate.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_countdown_timer/flutter_countdown_timer.dart';
+import 'package:permission_handler/permission_handler.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+import 'package:image_picker/image_picker.dart';
+import 'package:intl/intl.dart';
+import 'package:cached_network_image/cached_network_image.dart';
+import 'package:nik_validator/nik_validator.dart';
+import 'package:pilkada/bloc/datakordinator/datakoordinator_bloc.dart';
+import 'package:pilkada/extensions/extensions.dart';
+import 'package:pilkada/models/Kabupaten.dart';
+import 'package:pilkada/shared/themecolor.dart';
+import 'package:pilkada/ui/widgets/widgets.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
+import 'package:lottie/lottie.dart';
+import 'package:quickalert/quickalert.dart';
+import 'package:shimmer/shimmer.dart';
+import 'package:syncfusion_flutter_pdfviewer/pdfviewer.dart';
+import 'package:webview_flutter/webview_flutter.dart';
+import '../../bloc/DataDashboard/datadashboard_bloc.dart';
+import '../../bloc/DataRelawan/datarelawan_bloc.dart';
+import 'package:flutter_file_downloader/flutter_file_downloader.dart';
+import '../../bloc/Datakandidat/datakandidat_bloc.dart';
+import '../../bloc/Datakecurangan/data_kecurangan_bloc.dart';
+import '../../bloc/Dataprofile/dataprofile_bloc.dart';
+import '../../bloc/Datatps/datatps_bloc.dart';
+import '../../bloc/StatusBloc/status_bloc_bloc.dart';
+
+import '../../bloc/berita/berita_bloc.dart';
+import '../../bloc/dataaksesoris/dataaksesoris_bloc.dart';
+import '../../bloc/dataperolehansuara/dataperolehansuara_bloc.dart';
+import '../../bloc/datasaksi/datasaksi_bloc.dart';
+
+import '../../bloc/jenisAksesoris/jenisaksesoris_bloc.dart';
+
+import '../../bloc/konekkedaerah_bloc.dart';
+import '../../bloc/kordinatorkelurahan/kordinatorkelurahan_bloc.dart';
+import '../../bloc/loginandauth/auth_bloc.dart';
+import '../../bloc/loginandauth/login_bloc.dart';
+
+import '../../models/Kecamatan.dart';
+import '../../models/Provinsi.dart';
+
+import '../../models/datajenisaksesoris.dart';
+import '../../models/datarelawanutama.dart';
+import '../../services/AuthService.dart';
+
+part 'HalamanLoading.dart';
+part 'loadingpage.dart';
+part 'loginpage.dart';
+part 'HalamanSettings.dart';
+part 'Role.dart';
+part 'SplashScreen.dart';
+part 'HalamanPdfView.dart';
+part 'Halamancamerabaru.dart';
+part 'HalamanCamera.dart';
+part 'HalamanTambahAksesoris.dart';
+part 'HalamanJenisAksesoris.dart';
+part 'HomePage.dart';
+part 'HalamanMenu/HalamanDataCalek.dart';
+part 'HalamanDownload.dart';
+part 'HalamanCaleg.dart';
+part 'PopupStatus.dart';
+part 'HalamanTambahJenisAksesoris.dart';
+part 'HalamanTambahDataSaksi.dart';
+part 'HalamanTemplateBaru.dart';
+part 'halamanhome.dart';
+part 'HalamanUbahPassword.dart';
+part 'DetailBerita.dart';
+part 'halamanTemplate.dart';
+part 'HalamanTambahKecurangan.dart';
+part 'HomePageBaru.dart';
+part 'HalamanKecuranganPilkada.dart';
+part 'HalamanMenu/HalamanDataSaksi.dart';
+part 'HalamanMenu/HalamanDataKoordinator.dart';
+part 'HalamanMenu/HalamanDataAdmin.dart';
+part 'HalamanBerita.dart';
+part 'HalamanTambahDataRelawan.dart';
+part 'HalamanProfile.dart';
+part 'HalamanCetakIDCARD.dart';
+part 'HalamanTemplateAwal.dart';
+part 'DetailDpt.dart';
+part 'HalamanMenu/HalamanKoorkomunitas.dart';
+part 'Dashboard/DashboardAdmin.dart';
+part 'HalamanMenu/HalamanDataRelawan.dart';
+part 'DetailRelawan.dart';
+part 'Halamankordinatorkelurahan.dart';
+part 'HalamanTemplateData.dart';
+part 'HalamanTambahdataCaleg.dart';
+
+part 'HalamanKoordinator.dart';
+part 'HalamanDataAksesoris.dart';
+part 'HalamanTambahDataKoordinator.dart';
+
+part 'HalamanDataSaksi.dart';
+part 'DataPerolehanSuara.dart';
+part 'wrapper.dart';
+part 'HalamanTambahDataTps.dart';
+part 'HalamanDataTps.dart';
+part 'Detailaksesoris.dart';
+part 'HalamanPerolehanSuara.dart';
+part 'NikValidator.dart';
+part 'HalamanDatarelawancoba.dart';
+part 'HalamanJumlahdpt.dart';
+part 'DetailSaksi.dart';
+part 'DetailKoordinator.dart';
+part 'HalamanTambahSaksinew.dart';

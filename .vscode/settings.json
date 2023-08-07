@@ -1,0 +1,5 @@
+{
+    "dart.useLegacyAnalyzerProtocol": true,
+    "dart.autoImportCompletions": false,
+    "dart.lspSnippetTextEdits": false
+}
